@@ -22,9 +22,11 @@
                             <!--<small id="titleHelp" class="form-text text-muted">Save what are you doing...</small>-->
                             <!--</div>-->
                         </form>
-                        <div v-else>
-                            <h1>{{diffAll}}</h1>
-                            <button class="btn btn-outline-danger" type="button" v-on:click="stopActivity"><i class="fa fa-stop"></i></button>
+                        <div v-else class="mb-5">
+                            <h1 class="text-center">{{lastActivity.title}}</h1>
+                            <h2 class="text-center">{{diffAll}}</h2>
+                            <div class="text-center"><button class="btn btn-outline-danger btb-sm" type="button" v-on:click="stopActivity"><i class="fa fa-stop"></i></button></div>
+
                         </div>
                         <div>
                             <table class="table">

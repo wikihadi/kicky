@@ -1963,6 +1963,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Dashboard",
   props: ['user'],
@@ -37715,18 +37717,26 @@ var render = function() {
                       : _vm._e()
                   ]
                 )
-              : _c("div", [
-                  _c("h1", [_vm._v(_vm._s(_vm.diffAll))]),
+              : _c("div", { staticClass: "mb-5" }, [
+                  _c("h1", { staticClass: "text-center" }, [
+                    _vm._v(_vm._s(_vm.lastActivity.title))
+                  ]),
                   _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-outline-danger",
-                      attrs: { type: "button" },
-                      on: { click: _vm.stopActivity }
-                    },
-                    [_c("i", { staticClass: "fa fa-stop" })]
-                  )
+                  _c("h2", { staticClass: "text-center" }, [
+                    _vm._v(_vm._s(_vm.diffAll))
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "text-center" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-outline-danger btb-sm",
+                        attrs: { type: "button" },
+                        on: { click: _vm.stopActivity }
+                      },
+                      [_c("i", { staticClass: "fa fa-stop" })]
+                    )
+                  ])
                 ]),
             _vm._v(" "),
             _c("div", [
