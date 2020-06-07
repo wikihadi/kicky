@@ -20,3 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/activity/add/post','ActivityController@addActivityPost');
+Route::post('/activity/stop/post','ActivityController@stopActivityPost');
+Route::get('/activity/last/get','ActivityController@lastActivityGet');
+Route::get('/activities/get','ActivityController@activitiesGet');
