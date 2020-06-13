@@ -34,9 +34,9 @@ class ActivityController extends Controller
 
     public function addActivityPost(Request $request)
     {
-        $request->validate([
-            'title' => 'required',
-        ]);
+//        $request->validate([
+//            'title' => 'required',
+//        ]);
 
 
         Activity::create($request->all());

@@ -1965,6 +1965,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Dashboard",
   props: ['user'],
@@ -37650,8 +37652,7 @@ var render = function() {
                           type: "text",
                           name: "title",
                           id: "title",
-                          placeholder: "What are you doing!",
-                          required: ""
+                          placeholder: "What are you doing!"
                         },
                         domProps: { value: _vm.title },
                         on: {
@@ -37718,9 +37719,13 @@ var render = function() {
                   ]
                 )
               : _c("div", { staticClass: "mb-5" }, [
-                  _c("h1", { staticClass: "text-center" }, [
-                    _vm._v(_vm._s(_vm.lastActivity.title))
-                  ]),
+                  _vm.lastActivity.title != null
+                    ? _c("h1", { staticClass: "text-center" }, [
+                        _vm._v(_vm._s(_vm.lastActivity.title))
+                      ])
+                    : _c("h1", { staticClass: "text-center" }, [
+                        _vm._v("Add Title")
+                      ]),
                   _vm._v(" "),
                   _c("h2", { staticClass: "text-center" }, [
                     _vm._v(_vm._s(_vm.diffAll))
@@ -37740,22 +37745,34 @@ var render = function() {
                 ]),
             _vm._v(" "),
             _c("div", [
-              _c("table", { staticClass: "table" }, [
+              _c("table", { staticClass: "table", attrs: { dir: "rtl" } }, [
                 _vm._m(1),
                 _vm._v(" "),
                 _c(
                   "tbody",
                   _vm._l(_vm.activities, function(a) {
-                    return _c("tr", [
-                      _c("th", { attrs: { scope: "row" } }, [
-                        _vm._v(_vm._s(a.id))
-                      ]),
+                    return _c("tr", { staticClass: " hvr-fade w-100" }, [
+                      a.title != null
+                        ? _c(
+                            "td",
+                            {
+                              staticClass: "text-right w-100",
+                              attrs: { scope: "row" }
+                            },
+                            [_vm._v(_vm._s(a.title))]
+                          )
+                        : _c(
+                            "td",
+                            {
+                              staticClass: "text-right w-100",
+                              attrs: { scope: "row" }
+                            },
+                            [_vm._v("افزون عنوان")]
+                          ),
                       _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(a.title))]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(a.description))]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(a.duration))])
+                      _c("td", { staticClass: "text-left" }, [
+                        _vm._v(_vm._s(a.duration))
+                      ])
                     ])
                   }),
                   0
@@ -37785,13 +37802,13 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("#")]),
+        _c("th", { staticClass: "text-right", attrs: { scope: "col" } }, [
+          _vm._v("عنوان")
+        ]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Title")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Description")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Duration")])
+        _c("th", { staticClass: "text-left", attrs: { scope: "col" } }, [
+          _vm._v("مدت زمان")
+        ])
       ])
     ])
   }

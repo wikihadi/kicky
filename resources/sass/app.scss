@@ -9,3 +9,13 @@
 
 //Font Awesome
 @import "~font-awesome/scss/font-awesome";
+
+//Font Vazir
+@import "~vazir-font/dist/font-face.css";
+
+//Hover.css
+@import "~hover.css/scss/hover";
+
+*{
+    font-family: Vazir,sans-serif;
+}

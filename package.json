@@ -24,6 +24,8 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "font-awesome": "^4.7.0"
+        "font-awesome": "^4.7.0",
+        "hover.css": "^2.3.2",
+        "vazir-font": "^26.0.2"
     }
 }

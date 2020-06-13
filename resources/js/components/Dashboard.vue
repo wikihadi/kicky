@@ -10,7 +10,7 @@
                             <!--<div class="form-group">-->
                                 <!--<label for="title">Title</label>-->
                                 <div class="input-group mb-3">
-                                    <input type="text" name="title" id="title" placeholder="What are you doing!" class="form-control" v-model="title" required>
+                                    <input type="text" name="title" id="title" placeholder="What are you doing!" class="form-control" v-model="title">
                                     <div class="input-group-append">
                                         <button class="btn btn- secondary" type="button" v-on:click="more=!more"><i class="fa fa-plus" v-if="!more"></i><i class="fa fa-minus" v-else></i></button>
                                         <button class="btn btn-success" type="submit"><i class="fa fa-play"></i></button>
@@ -23,27 +23,29 @@
                             <!--</div>-->
                         </form>
                         <div v-else class="mb-5">
-                            <h1 class="text-center">{{lastActivity.title}}</h1>
+                            <h1 class="text-center" v-if="lastActivity.title!=null">{{lastActivity.title}}</h1>
+                            <h1 class="text-center" v-else>Add Title</h1>
                             <h2 class="text-center">{{diffAll}}</h2>
                             <div class="text-center"><button class="btn btn-outline-danger btb-sm" type="button" v-on:click="stopActivity"><i class="fa fa-stop"></i></button></div>
 
                         </div>
                         <div>
-                            <table class="table">
+                            <table class="table" dir="rtl">
                                 <thead>
                                 <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Title</th>
-                                    <th scope="col">Description</th>
-                                    <th scope="col">Duration</th>
+                                    <!--<th scope="col">#</th>-->
+                                    <th scope="col" class="text-right">عنوان</th>
+                                    <!--<th scope="col">Description</th>-->
+                                    <th scope="col" class="text-left">مدت زمان</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr v-for="a in activities">
-                                    <th scope="row">{{a.id}}</th>
-                                    <td>{{a.title}}</td>
-                                    <td>{{a.description}}</td>
-                                    <td>{{a.duration}}</td>
+                                <tr v-for="a in activities" class="">
+                                    <!--<th scope="row">{{a.id}}</th>-->
+                                    <td v-if="a.title!=null" scope="row" class="text-right">{{a.title}}</td>
+                                    <td v-else scope="row" class="text-right">افزون عنوان</td>
+                                    <!--<td>{{a.description}}</td>-->
+                                    <td class="text-left">{{a.duration}}</td>
                                 </tr>
                                 </tbody>
                             </table>
